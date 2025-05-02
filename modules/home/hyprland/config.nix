@@ -3,8 +3,8 @@
   wayland.windowManager.hyprland = {
     settings = {
       exec-once = [
-        "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        # "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        # "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
         "waybar &"
         "hyprpaper"
@@ -35,7 +35,7 @@
       };
 
       misc = {
-        force_default_waallpaper = 0;
+        force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
 
@@ -44,7 +44,7 @@
         preserve_split = true;
       };
 
-      master {
+      master = {
         new_status = "master";
       };
 
@@ -74,7 +74,7 @@
       };
 
       animations = {
-        enable = true;
+        # enable = true;
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
           "easeInOutCubic,0.65,0.05,0.36,1"
@@ -205,9 +205,10 @@
     extraConfig = "
       monitor=,preferred,auto,auto
       monitor=eDP-1,1920x1200@60,0x0,1.25
-      xwayland {
-        force_zero_scaling = true
-      }
+      env=ELECTRON_OZONE_PLATFORM_HINT
+      # xwayland {
+      #   force_zero_scaling = true
+      # }
     ";
   };
 }

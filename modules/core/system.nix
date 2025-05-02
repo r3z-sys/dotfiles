@@ -16,6 +16,9 @@
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
   ];
+  
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
   i18n.defaultLocale = "en_US.UTF-8";
