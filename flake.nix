@@ -12,6 +12,7 @@
   outputs = 
   { nixpkgs, self, ... } @inputs: 
   let
+    username = "tabun";
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
