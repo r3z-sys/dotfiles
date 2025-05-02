@@ -106,7 +106,7 @@
         "$mainMod, F, fullscreen, 1"
         "$mainMod, RETURN, exec, kitty"
         "$mainMod, Q, killactive"
-        #"$mainMod, M, exit"
+        "$mainMod, M, exit"
         "$mainMod, R, exec, wofi --show drun"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
@@ -219,11 +219,13 @@
       monitor=eDP-1,1920x1200@60,0x0,1.25
       monitor=,preferred,auto,auto
       env=ELECTRON_OZONE_PLATFORM_HINT
-      exec-once = dconf write /org/gnome/desktop/interface/gtk-theme 'Adwaita'
-      exec-once = dconf write /org/gnome/desktop/interface/icon-theme 'Flat-Remix-Red-Dark'
-      exec-once = dconf write /org/gnome/desktop/interface/document-font-name 'Noto Sans Medium 11'
-      exec-once = dconf write /org/gnome/desktop/interface/font-name 'Noto Sans Medium 11'
-      exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name 'Noto Sans Mono Medium 11'
+      env = HYPRCURSOR_THEME,Bibata-Modern-Classic
+      env = HYPRCURSOR_SIZE,14
+      # exec-once = dconf write /org/gnome/desktop/interface/gtk-theme 'Adwaita'
+      # exec-once = dconf write /org/gnome/desktop/interface/icon-theme 'Flat-Remix-Red-Dark'
+      # exec-once = dconf write /org/gnome/desktop/interface/document-font-name 'Noto Sans Medium 11'
+      # exec-once = dconf write /org/gnome/desktop/interface/font-name 'Noto Sans Medium 11'
+      # exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name 'Noto Sans Mono Medium 11'
       # xwayland {
       #   force_zero_scaling = true
       # }

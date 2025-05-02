@@ -3,7 +3,7 @@
   home.packages = (with pkgs; [ 
     bibata-cursors
     flat-remix-gtk
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
   ]);
 
   home.pointerCursor = {
@@ -11,23 +11,23 @@
     # x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 16;
+    size = 24;
   };
 
   gtk = {
     enable = true;
-    theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
-    };
+    # theme = {
+    #   package = pkgs.flat-remix-gtk;
+    #   name = "Flat-Remix-GTK-Grey-Darkest";
+    # };
 
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
     };
 
     font = {
-      name = "Sans";
+      name = "Adwaita Sans";
       size = 11;
     };
   };
