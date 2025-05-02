@@ -8,7 +8,13 @@
 }:
 {
   imports = [
-    ./users.nix
-    ./configuration.nix
+    ./bootloader.nix
+    ./fonts.nix
+    ./hardware.nix
+    ./network.nix
+    ./pipewire.nix
+    ./program.nix
+    ./system.nix
+    ./user.nix
   ];
 }
