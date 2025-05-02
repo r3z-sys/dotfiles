@@ -10,21 +10,16 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username host; };
-    users.${username} = {
-      imports =
-        if (host == "desktop") then
-          [ ./../home/default.desktop.nix ]
-        else
-          [ ./../home ];
-      home.username = "${username}";
-      home.homeDirectory = "/home/${username}";
+    users.tabun = {
+      imports = [../home];
+      home.username = "tabun";
+      home.homeDirectory = "/home/tabun";
       home.stateVersion = "24.11";
       programs.home-manager.enable = true;
     };
   };
 
-  users.users.${username} = {
+  users.users.tabun = {
     isNormalUser = true;
     extraGroups = [ "wheel" "audio" "video" "disk" ];
   };

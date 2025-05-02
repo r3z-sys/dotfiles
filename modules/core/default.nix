@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    ./users.nix
     ./configuration.nix
   ];
 }
