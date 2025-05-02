@@ -9,8 +9,10 @@
     hyprpaper
     pavucontrol
     slurp
+    swappy
     waybar
     wl-clip-persist
+    wl-clipboard
     wofi  
   ]);
 

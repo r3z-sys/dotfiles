@@ -9,14 +9,15 @@
         "waybar &"
         "hyprpaper"
       ];
+
       input = {
         kb_layout = "us,fr";
         kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         repeat_delay = 300;
-        follow_mouse = 0;
+        follow_mouse = 1;
         float_switch_override_focus = 0;
-        mouse_refocus = 0;
+        mouse_refocus = 1;
         sensitivity = 0;
         touchpad = {
           natural_scroll = true;
@@ -102,13 +103,19 @@
         ];
       };
       bind = [
-        "$mainMod, F, exec, firefox"
-        "$mainMod, Q, exec, kitty"
-        "$mainMod, C, killactive"
-        "$mainMod, M, exit"
+        "$mainMod, F, fullscreen, 1"
+        "$mainMod, RETURN, exec, kitty"
+        "$mainMod, Q, killactive"
+        #"$mainMod, M, exit"
         "$mainMod, R, exec, wofi --show drun"
         "$mainMod, P, pseudo"
         "$mainMod, J, togglesplit"
+
+        # Screenshot
+        ", Print, exec, grim -g $(slurp) - | swappy -f -"
+
+        # Monitor setting
+        "$mainMod, N, exec, hyprctl monitor eDP-1,1920x1200@60,0x0,1.25; hyprctl monitor ,preferred,auto,auto"
 
         # Focus
         "$mainMod, left, movefocus, l"
@@ -201,11 +208,22 @@
         "float,class:^(mpv)$"
         "float,title:^(Firefox — Sharing Indicator)$"
       ];
+
+      workspace = [
+        "f[0],rounding:false,bordersize:0,gapsout:0"
+        "f[1],rounding:false,bordersize:0,gapsout:0"
+      ];
+
     };
     extraConfig = "
-      monitor=,preferred,auto,auto
       monitor=eDP-1,1920x1200@60,0x0,1.25
+      monitor=,preferred,auto,auto
       env=ELECTRON_OZONE_PLATFORM_HINT
+      exec-once = dconf write /org/gnome/desktop/interface/gtk-theme 'Adwaita'
+      exec-once = dconf write /org/gnome/desktop/interface/icon-theme 'Flat-Remix-Red-Dark'
+      exec-once = dconf write /org/gnome/desktop/interface/document-font-name 'Noto Sans Medium 11'
+      exec-once = dconf write /org/gnome/desktop/interface/font-name 'Noto Sans Medium 11'
+      exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name 'Noto Sans Mono Medium 11'
       # xwayland {
       #   force_zero_scaling = true
       # }
