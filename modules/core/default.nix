@@ -14,6 +14,7 @@
     ./network.nix
     ./pipewire.nix
     ./program.nix
+    ./services.nix
     ./system.nix
     ./user.nix
   ];

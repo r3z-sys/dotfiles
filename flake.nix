@@ -22,7 +22,7 @@
   in
   {
     nixosConfigurations = {
-      devzc0de = nixpkgs.lib.nixosSystem {
+      c0rzs = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [ ./hosts/laptop ];
         specialArgs = {

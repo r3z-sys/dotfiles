@@ -1,6 +1,6 @@
 {inputs, username, host, ...}: {
   imports = [
-    ./hyprland
+    # ./hyprland
     ./home.nix
     ./package.nix
     ./git.nix

@@ -1,7 +1,7 @@
 { pkgs, host, ... }:
 {
   networking = {
-    hostName = "devzc0de";
+    hostName = "c0rzs";
     networkmanager.enable = true;
     nameservers = [
       "8.8.8.8"
@@ -23,6 +23,4 @@
       ];
     };
   };
-
-  # environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 }

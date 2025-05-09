@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = (with pkgs; [ 
-    android-studio
+    # android-studio
     libreoffice-fresh
     obsidian
     zotero

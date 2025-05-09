@@ -21,6 +21,10 @@
 
   users.users.tabun = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "video" "disk" ];
+    extraGroups = [ "wheel" "audio" "video" "disk" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      vscode
+      tree
+    ];
   };
 }
