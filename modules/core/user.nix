@@ -9,6 +9,7 @@
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useUserPackages = true;
+    shell = pkgs zsh;
     useGlobalPkgs = true;
     users.tabun = {
       imports = [../home];
@@ -27,4 +28,9 @@
       tree
     ];
   };
+
+  programs.adb.enable = true;
+  programs.firefox.enable = true;
+  programs.zsh.enable = true;
+
 }
