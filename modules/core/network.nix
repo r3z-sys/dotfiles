@@ -1,7 +1,7 @@
 { pkgs, host, ... }:
 {
   networking = {
-    hostName = "c0rzs";
+    hostName = "nix0s";
     networkmanager.enable = true;
     nameservers = [
       "8.8.8.8"

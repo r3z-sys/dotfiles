@@ -31,20 +31,14 @@
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
-  fileSystems."/var" =
+  fileSystems."/var/log" =
     { device = "/dev/disk/by-uuid/ff0f0d7d-ed17-4b45-a414-19edf1d17f22";
       fsType = "btrfs";
-      options = [ "subvol=@var" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/.snapshots" =
-    { device = "/dev/disk/by-uuid/ff0f0d7d-ed17-4b45-a414-19edf1d17f22";
-      fsType = "btrfs";
-      options = [ "subvol=@snapshots" "compress=zstd" "noatime" ];
+      options = [ "subvol=@log" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3FCE-A9F7";
+    { device = "/dev/disk/by-uuid/95BE-B3E5";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
